@@ -1,0 +1,68 @@
+<div class="input-group"> <!-- input-group -->
+	<input	type="text"
+			id="SearchFideicomisos"
+			class="form-control"
+			placeholder="Fideicomiso"
+			value="{{modalSelected.nombre}}">
+	<span class="input-group-btn">
+		<button class="btn btn-default" (click)="onOpenDialog($event)"><i class="fa fa-search"></i></button>
+	</span>
+</div> <!-- input-group -->
+
+<!-- Component (View): SearchFideicomisos -->
+<modal [animation]="animationEnabled" [backdrop]="'static'" (onClose)="onClose()" #modal>
+	
+	<modal-header [show-close]="true"> <!-- modal-header -->
+		<h4 class="modal-title">Search Fideicomisos</h4>
+	</modal-header> <!-- modal-header -->
+	
+	<modal-body> <!-- modal-body -->
+		<div class="row"> <!-- row -->
+			<div class="col-md-12"> <!-- col-md-12 -->
+				<div class="x_panel"> <!-- x_panel -->
+					<div class="x_title"> <!-- x_title -->
+						<h2>Search Results</h2>
+						<ul class="nav navbar-right panel_toolbox">
+							<li>						
+							</li>
+						</ul>
+						<div class="clearfix"></div>
+					</div> <!-- x_title -->
+					<div class="x_content"> <!-- x_content -->
+						<br />
+						<table class="table table-striped" *ngIf='searchFideicomisos && searchFideicomisos.length'> <!-- table -->
+							<thead>
+								<tr>
+									<th></th>
+									<th>Número</th>
+									<th>Nombre</th>
+									<th>Tipo de Persona</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr *ngFor="let item of searchFideicomisos">
+									<td>
+										<input	type="radio"
+												class="flat"
+												(click)="onSelection(item)"
+												name="selected_item"
+												id="selected_item_">
+									</td>
+									<td>{{item.numero}}</td>
+									<td>{{item.nombre}}</td>
+									<td>{{item.tipo_persona}}</td>
+								</tr>
+							</tbody>
+						</table> <!-- table -->
+					</div> <!-- panel-x_content -->
+				</div> <!-- x_panel -->
+			</div> <!-- col-md-12 -->
+		</div> <!-- row -->
+	</modal-body> <!-- modal-body -->
+	
+	<modal-footer> <!-- modal-footer -->
+		<button type="button" class="btn btn-default" data-dismiss="modal" (click)="modal.dismiss()"><i class="fa fa-close"></i> Cancel</button>
+		<button type="button" class="btn btn-primary" (click)="modal.close()"><i class="fa fa-check"></i> Select</button>
+	</modal-footer> <!-- modal-footer -->
+	
+</modal>				
