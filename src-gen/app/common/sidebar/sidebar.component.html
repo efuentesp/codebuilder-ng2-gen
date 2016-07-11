@@ -30,18 +30,18 @@
         <ul class="nav side-menu">
 
           <li>
-            <a><i [routerLink]="['Home']" class="fa fa-home"></i> Home</a>
+            <a [routerLink]="['Home']"><i class="fa fa-home"></i> Home</a>
           </li>
           <li>
-            <a><i [routerLink]="['AddFideicomiso']" class="fa fa-plus"></i> Add Fideicomiso</a>
+            <a [routerLink]="['AddFideicomiso']"><i class="fa fa-plus"></i> Add Fideicomiso</a>
           </li>
 
-          <li><a><i class="fa fa-home"></i> Fideicomiso <span class="fa fa-chevron-down"></span></a>
+          <li><a><i class="fa fa-bank"></i> Fideicomiso <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu">
               <li><a [routerLink]="['AddFideicomiso']">Add Fideicomiso</a></li>
               <li><a [routerLink]="['Fideicomisos']">Fideicomisos List</a></li>
               <li><a [routerLink]="['AddSubfiso']">Add Subfiso</a></li>
-              <li><a [routerLink]="['Subfisos']">Subfisos List</a></li>              
+              <li><a [routerLink]="['Subfisos']">Subfisos List</a></li>
             </ul>
           </li>
         </ul>

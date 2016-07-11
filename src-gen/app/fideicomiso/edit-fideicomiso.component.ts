@@ -6,9 +6,11 @@ import { IFideicomiso } from './fideicomiso.interface';
 import { Fideicomiso } from './fideicomiso.class';
 import { FideicomisoService } from './fideicomiso.service';
 
+
 @Component({
 	templateUrl: 'app/fideicomiso/edit-fideicomiso.component.html',
-	directives: [FORM_DIRECTIVES]
+	directives: [FORM_DIRECTIVES
+						]
 })
 export class EditFideicomisoComponent implements OnInit {
 

@@ -6,9 +6,13 @@ import { ISubfiso } from './subfiso.interface';
 import { Subfiso } from './subfiso.class';
 import { SubfisoService } from './subfiso.service';
 
+import { SearchFideicomisosComponent } from '../searchFideicomisos/searchFideicomisos.component';
+
 @Component({
 	templateUrl: 'app/subfiso/edit-subfiso.component.html',
-	directives: [FORM_DIRECTIVES]
+	directives: [FORM_DIRECTIVES,
+										SearchFideicomisosComponent
+						]
 })
 export class EditSubfisoComponent implements OnInit {
 
